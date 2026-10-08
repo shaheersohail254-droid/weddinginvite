@@ -2825,27 +2825,46 @@ body {
 }
 
 .invite-script-names {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 14px auto 6px !important;
+  width: 100% !important;
+  text-align: center !important;
+  transition: all 0.3s ease;
+}
+
+.couple-name-line {
   font-family: 'Alex Brush', cursive !important;
-  font-size: clamp(34px, 5.8vw, 56px) !important;
+  font-size: clamp(32px, 5.6vw, 56px) !important;
   font-weight: 400 !important;
   text-align: center !important;
-  margin: 12px auto 6px !important;
   background: linear-gradient(135deg, #FFF6D6 0%, #F3D279 45%, #C5A059 100%) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
   line-height: 1.25 !important;
   text-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
-  display: block !important;
-  width: 100% !important;
   letter-spacing: 0.02em;
-  transition: all 0.3s ease;
+  display: block !important;
+}
+
+.couple-ampersand {
+  font-family: 'Alex Brush', cursive !important;
+  font-size: clamp(26px, 4.2vw, 40px) !important;
+  font-weight: 400 !important;
+  text-align: center !important;
+  background: linear-gradient(135deg, #FFF6D6 0%, #F3D279 45%, #C5A059 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  line-height: 1.05 !important;
+  margin: 2px auto !important;
+  display: block !important;
+  opacity: 0.95;
 }
 
 .invite-script-names.font-opt-alex-brush {
   font-family: 'Alex Brush', cursive !important;
-  font-size: clamp(34px, 5.8vw, 56px) !important;
-  font-weight: 400 !important;
-  line-height: 1.25 !important;
 }
 
 

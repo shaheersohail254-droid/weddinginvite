@@ -9,9 +9,11 @@ export default function InvitationMessage() {
           formal <strong className="walima-accent">Walima Dinner Reception</strong> celebrating the marriage of
         </p>
 
-        {/* Option 1: Alex Brush Cursive Calligraphy */}
+        {/* Alex Brush Cursive Calligraphy: 3 Dedicated Lines */}
         <div className="invite-script-names font-opt-alex-brush">
-          Muhammad Arham Zubair &amp; Umaima Akhtar
+          <span className="couple-name-line">Muhammad Arham Zubair</span>
+          <span className="couple-ampersand">&amp;</span>
+          <span className="couple-name-line">Umaima Akhtar</span>
         </div>
 
         <p className="daughter-of-line">
