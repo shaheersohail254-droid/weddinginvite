@@ -2441,7 +2441,7 @@ body {
 /* Olive Landscape Artwork Frame */
 .olive-landscape-card-wrap {
   max-width: 580px;
-  margin: 20px auto 28px;
+  margin: 10px auto 24px;
 }
 
 .olive-landscape-frame {
@@ -2784,7 +2784,7 @@ body {
 
 /* Formal Invitation Block & Translation in Hero */
 .hero-quote-box {
-  margin: 10px auto 24px !important;
+  margin: 18px auto 16px !important;
   max-width: 520px !important;
   text-align: center !important;
 }

@@ -16,27 +16,11 @@ export default function Hero() {
         />
       </div>
 
-      {/* Quranic Translation Quote Box (Placed above picture) */}
+      {/* Olive Watercolor Landscape Painting (Moved up directly below top arch) */}
       <motion.div
-        initial={{ opacity: 0, y: 10 }}
+        initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.9, delay: 0.4 }}
-        className="italian-quote-box hero-quote-box"
-      >
-        <Quote size={24} className="quote-icon-gold" />
-        <blockquote className="italian-quote-text">
-          &ldquo;And among His signs is that He created for you mates from among yourselves, that you may find tranquility in them...&rdquo;
-        </blockquote>
-      </motion.div>
-
-      {/* Golden Floral Divider (Placed above the landscape painting) */}
-      <FloralDivider />
-
-      {/* Olive Watercolor Landscape Painting */}
-      <motion.div
-        initial={{ opacity: 0, y: 15 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1.1, delay: 0.5 }}
+        transition={{ duration: 1.0, delay: 0.35 }}
         className="olive-landscape-card-wrap"
       >
         <div className="olive-landscape-frame">
@@ -47,6 +31,22 @@ export default function Hero() {
           />
         </div>
       </motion.div>
+
+      {/* Quranic Translation Quote Box (Moved below the image) */}
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.9, delay: 0.5 }}
+        className="italian-quote-box hero-quote-box"
+      >
+        <Quote size={24} className="quote-icon-gold" />
+        <blockquote className="italian-quote-text">
+          &ldquo;And among His signs is that He created for you mates from among yourselves, that you may find tranquility in them...&rdquo;
+        </blockquote>
+      </motion.div>
+
+      {/* Golden Floral Divider (Placed directly below quote box) */}
+      <FloralDivider />
     </section>
   );
 }
