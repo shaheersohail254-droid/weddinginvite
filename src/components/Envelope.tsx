@@ -3,7 +3,13 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
-export default function Envelope({ onOpen }: { onOpen: () => void }) {
+interface EnvelopeProps {
+  onOpenStart?: () => void;
+  onOpenComplete?: () => void;
+  onOpen?: () => void;
+}
+
+export default function Envelope({ onOpenStart, onOpenComplete, onOpen }: EnvelopeProps) {
   const [isOpening, setIsOpening] = useState(false);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
@@ -22,16 +28,22 @@ export default function Envelope({ onOpen }: { onOpen: () => void }) {
   const handleOpen = () => {
     if (isOpening) return;
     setIsOpening(true);
-    setTimeout(() => {
-      onOpen();
-    }, 1300);
+    // Notify parent immediately so music starts and invite begins silky fade-in
+    onOpenStart?.();
+    onOpen?.();
   };
 
   return (
     <motion.section
       className="villa-door-opening-screen"
-      animate={isOpening ? { opacity: 0 } : { opacity: 1 }}
-      transition={{ duration: 0.8, delay: 0.7, ease: "easeInOut" }}
+      initial={{ opacity: 1 }}
+      animate={isOpening ? { opacity: 0, pointerEvents: "none" } : { opacity: 1 }}
+      transition={{ duration: 1.0, delay: 0.65, ease: "easeInOut" }}
+      onAnimationComplete={() => {
+        if (isOpening) {
+          onOpenComplete?.();
+        }
+      }}
     >
       <div className="door-screen-backdrop" />
 
@@ -44,6 +56,9 @@ export default function Envelope({ onOpen }: { onOpen: () => void }) {
           tabIndex={0}
           aria-label="Untie the golden satin bow to open the wedding invitation doors"
         >
+          {/* Warm Golden Interior Ambient Glow revealed as doors open */}
+          <div className="door-interior-glow" />
+
           {/* Left Door Panel (3D Outward Swing) */}
           <motion.div
             className="door-card-panel left-card-panel"
@@ -84,7 +99,7 @@ export default function Envelope({ onOpen }: { onOpen: () => void }) {
             <motion.div
               className="realistic-satin-band-half left-band-half"
               animate={isOpening ? { scaleX: 0, opacity: 0 } : { scaleX: 1, opacity: 1 }}
-              transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
+              transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
               style={{ transformOrigin: "left center" }}
             >
               <img
@@ -98,7 +113,7 @@ export default function Envelope({ onOpen }: { onOpen: () => void }) {
             <motion.div
               className="realistic-satin-band-half right-band-half"
               animate={isOpening ? { scaleX: 0, opacity: 0 } : { scaleX: 1, opacity: 1 }}
-              transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
+              transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
               style={{ transformOrigin: "right center" }}
             >
               <img
@@ -113,7 +128,7 @@ export default function Envelope({ onOpen }: { onOpen: () => void }) {
               className="clean-satin-bow-wrapper"
               animate={
                 isOpening
-                  ? { scale: 0.1, rotate: -25, opacity: 0 }
+                  ? { scale: 0.05, rotate: -25, opacity: 0 }
                   : {
                       rotateZ: [0, -2, 1.5, -1, 2, -1.5, 0],
                       skewX: [0, -1.5, 1, -0.5, 1.5, -1, 0],
@@ -123,7 +138,7 @@ export default function Envelope({ onOpen }: { onOpen: () => void }) {
               }
               transition={
                 isOpening
-                  ? { duration: 0.45, ease: "backIn" }
+                  ? { duration: 0.4, ease: "backIn" }
                   : { duration: 6.5, repeat: Infinity, ease: "easeInOut" }
               }
               whileHover={{ scale: 1.06 }}
@@ -143,7 +158,7 @@ export default function Envelope({ onOpen }: { onOpen: () => void }) {
           onClick={handleOpen}
           style={{ cursor: "pointer" }}
           animate={isOpening ? { opacity: 0 } : { opacity: [0.75, 1, 0.75] }}
-          transition={{ duration: 2, repeat: isOpening ? 0 : Infinity }}
+          transition={isOpening ? { duration: 0.25 } : { duration: 2, repeat: Infinity }}
         >
           Untie the knot to enter the celebration
         </motion.p>
