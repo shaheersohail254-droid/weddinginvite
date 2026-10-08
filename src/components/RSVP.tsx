@@ -16,7 +16,7 @@ export default function RSVP() {
       <div className="rsvp-card luxury-rsvp-card">
         <BotanicalCorners />
         <p className="eyebrow">YOUR PRESENCE IS OUR HONOUR</p>
-        <h2 className="rsvp-title">RSVP</h2>
+        <h2>RSVP</h2>
         <p className="rsvp-subtitle">Looking forward to welcoming you with warmth and joy.</p>
         <FloralDivider />
 
