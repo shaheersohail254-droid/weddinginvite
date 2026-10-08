@@ -9,8 +9,8 @@ export default function Hero() {
       {/* Top Olive Garland Header (True Transparent PNG) */}
       <div className="olive-top-garland-wrap">
         <img
-          src="/images/olive_header.png"
-          alt="Watercolor Olive Garland"
+          src="/images/olive_header_silver.png"
+          alt="Silver Botanical Olive Garland"
           className="olive-garland-img"
         />
       </div>
