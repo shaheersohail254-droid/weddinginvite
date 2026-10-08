@@ -29,6 +29,9 @@ export default function Hero() {
         </blockquote>
       </motion.div>
 
+      {/* Golden Floral Divider (Placed above the landscape painting) */}
+      <FloralDivider />
+
       {/* Olive Watercolor Landscape Painting */}
       <motion.div
         initial={{ opacity: 0, y: 15 }}
@@ -44,8 +47,6 @@ export default function Hero() {
           />
         </div>
       </motion.div>
-
-      <FloralDivider />
     </section>
   );
 }
