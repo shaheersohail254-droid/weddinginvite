@@ -2,22 +2,22 @@
 @import "tailwindcss";
 
 :root {
-  /* Mafia Dark Italian Color Palette */
+  /* Mafia Dark Italian Color Palette (Preserved) */
   --charcoal-noir: #2B2B2B;
   --ironclad-grey: #565656;
   --urban-fog: #848484;
   --moonlit-silver: #B3B3B3;
-  --cloud-veil: #E0E0E0;
+  --cloud-veil: #F5E6BE;
 
   --ivory: #141414;
   --paper: #222222;
-  --ink: #E0E0E0;
-  --gold: #B3B3B3;
-  --gold2: #E0E0E0;
-  --gold-light: #848484;
-  --gold-glow: rgba(179, 179, 179, 0.2);
-  --deep: #E0E0E0;
-  --muted: #B3B3B3;
+  --ink: #F7E7C4;
+  --gold: #D4AF37;
+  --gold2: #F3E5AB;
+  --gold-light: #F9E79F;
+  --gold-glow: rgba(212, 175, 55, 0.35);
+  --deep: #E5C158;
+  --muted: #D4AF37;
   --card-bg: rgba(37, 37, 37, 0.94);
 }
 
@@ -424,7 +424,7 @@ body {
 .gold-button {
   border: 1px solid var(--gold);
   background: linear-gradient(135deg, #333333 0%, #1A1A1A 100%);
-  color: #E0E0E0;
+  color: #F3E5AB;
   padding: 14px 32px;
   letter-spacing: 0.22em;
   font-size: 11px;
@@ -648,7 +648,7 @@ body {
   text-align: center !important;
   font-family: 'Cormorant Garamond', serif !important;
   font-size: clamp(32px, 5.5vw, 56px) !important;
-  color: #FFFFFF !important;
+  color: #F3E5AB !important;
   letter-spacing: 0.02em !important;
   text-shadow: 0 2px 14px rgba(0, 0, 0, 0.7) !important;
   z-index: 2;
@@ -659,7 +659,7 @@ body {
   font-size: clamp(44px, 8.5vw, 92px);
   line-height: 0.95;
   margin: 18px 0 24px;
-  color: var(--cloud-veil);
+  color: #F3E5AB;
   text-shadow: 0 2px 20px rgba(0, 0, 0, 0.6);
 }
 
@@ -691,12 +691,12 @@ body {
 .date-display {
   font-size: clamp(10px, 2.5vw, 12px);
   letter-spacing: 0.3em;
-  color: var(--cloud-veil);
+  color: #F3E5AB;
   font-weight: 600;
   margin-top: 10px;
   padding: 8px 16px;
-  border-top: 1px solid rgba(184, 148, 75, 0.3);
-  border-bottom: 1px solid rgba(184, 148, 75, 0.3);
+  border-top: 1px solid rgba(212, 175, 55, 0.35);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.35);
 }
 
 /* Text Section */
@@ -718,11 +718,11 @@ body {
   width: 100%;
   padding: 16px 20px;
   background: radial-gradient(circle at 50% 50%, #2B2B2B 0%, #1A1A1A 100%);
-  border: 1px solid rgba(184, 148, 75, 0.35);
+  border: 1px solid rgba(212, 175, 55, 0.4);
   border-radius: 120px 120px 16px 16px;
   box-shadow:
     0 12px 35px rgba(60, 60, 60, 0.08),
-    inset 0 0 15px rgba(184, 148, 75, 0.1);
+    inset 0 0 15px rgba(212, 175, 55, 0.15);
   overflow: hidden;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
@@ -731,7 +731,7 @@ body {
   transform: translateY(-3px);
   box-shadow:
     0 18px 45px rgba(60, 60, 60, 0.12),
-    inset 0 0 20px rgba(184, 148, 75, 0.15);
+    inset 0 0 20px rgba(212, 175, 55, 0.2);
 }
 
 .hands-art-img {
@@ -751,7 +751,7 @@ body {
   font-size: clamp(32px, 5.5vw, 52px);
   margin: 0 auto 16px !important;
   text-align: center !important;
-  color: var(--cloud-veil);
+  color: #F3E5AB !important;
   display: block !important;
 }
 
@@ -759,7 +759,7 @@ body {
   max-width: 660px;
   margin: auto;
   font: 400 clamp(18px, 3.5vw, 22px) / 1.7 "Cormorant Garamond", serif;
-  color: #E0E0E0;
+  color: #F5E6BE;
 }
 
 /* Events Section */
@@ -842,14 +842,14 @@ body {
 .event-card h3 {
   font: 600 clamp(28px, 4vw, 36px) "Cormorant Garamond", serif;
   margin: 4px 0 16px;
-  color: var(--cloud-veil);
+  color: #F3E5AB;
 }
 
 .event-detail {
   display: flex;
   gap: 10px;
   align-items: flex-start;
-  color: #B3B3B3;
+  color: #F5E6BE;
   font-size: 13px;
   line-height: 1.5;
   margin: 8px 0;
@@ -877,7 +877,7 @@ body {
   flex-direction: column;
   align-items: center;
   background: linear-gradient(135deg, #1E1E1E 0%, #0E0E0E 100%);
-  color: #E0E0E0;
+  color: #F5E6BE;
   max-width: none;
   position: relative;
   box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.4);
@@ -892,7 +892,7 @@ body {
 }
 
 .countdown h2 {
-  color: #E0E0E0;
+  color: #F3E5AB;
 }
 
 .timer {
@@ -920,14 +920,14 @@ body {
 .timer b {
   display: block;
   font: 500 clamp(32px, 6.5vw, 60px) "Cormorant Garamond", serif;
-  color: #E0E0E0;
+  color: #F3E5AB;
   line-height: 1;
 }
 
 .timer span {
   font-size: clamp(8px, 2vw, 10px);
   letter-spacing: 0.25em;
-  color: #848484;
+  color: #D4AF37;
   margin-top: 6px;
   display: block;
 }
@@ -980,7 +980,7 @@ body {
 .venue-card h3 {
   font: 600 clamp(24px, 4vw, 30px) "Cormorant Garamond", serif;
   margin: 8px 0;
-  color: #FFFFFF !important;
+  color: #F3E5AB !important;
 }
 
 .venue-card span {
@@ -996,7 +996,7 @@ body {
   align-items: center;
   gap: 7px;
   margin-top: auto;
-  color: #E0E0E0;
+  color: #F3E5AB;
   font-size: 10px;
   font-weight: 600;
   letter-spacing: 0.18em;
@@ -1035,7 +1035,7 @@ body {
 .rsvp-card h2 {
   font-family: 'Cinzel', 'Cormorant Garamond', serif !important;
   font-size: clamp(38px, 6.5vw, 60px) !important;
-  color: #FFFFFF !important;
+  color: #F3E5AB !important;
   letter-spacing: 0.08em !important;
   text-shadow: 0 2px 14px rgba(0, 0, 0, 0.7) !important;
 }
@@ -1069,7 +1069,7 @@ body {
 
 .rsvp-lines strong {
   font: 600 clamp(20px, 4vw, 25px) "Cormorant Garamond", serif;
-  color: #E0E0E0 !important;
+  color: #F5E6BE !important;
 }
 
 /* Closing Section */
@@ -1128,7 +1128,7 @@ body {
   max-width: 680px;
   font-family: 'Cormorant Garamond', serif !important;
   font-size: clamp(32px, 5.5vw, 56px) !important;
-  color: #FFFFFF !important;
+  color: #F3E5AB !important;
   letter-spacing: 0.02em !important;
   text-shadow: 0 2px 14px rgba(0, 0, 0, 0.7) !important;
   z-index: 2;
@@ -1145,7 +1145,7 @@ body {
 .couple-names-closing {
   font: 600 clamp(28px, 5vw, 44px) "Cormorant Garamond", serif;
   margin: 0;
-  color: #FFFFFF !important;
+  color: #F3E5AB !important;
   z-index: 2;
   text-shadow: 0 1px 4px rgba(184, 148, 75, 0.15);
 }
@@ -1374,12 +1374,12 @@ body {
   --charcoal-main: #2B2B2B;
   --charcoal-dark: #1A1A1A;
   --charcoal-accent: #3A3A3A;
-  --pearl-skin: #E0E0E0;
+  --pearl-skin: #FFF3D6;
   --pearl-card: #1E1E1E;
-  --pearl-glow: rgba(224, 224, 224, 0.1);
-  --gold-italian: #B3B3B3;
-  --gold-metallic: linear-gradient(135deg, #FFFFFF 0%, #E0E0E0 50%, #B3B3B3 100%);
-  --gold-border: rgba(179, 179, 179, 0.25);
+  --pearl-glow: rgba(212, 175, 55, 0.15);
+  --gold-italian: #D4AF37;
+  --gold-metallic: linear-gradient(135deg, #FFF6D6 0%, #F3D279 50%, #C5A059 100%);
+  --gold-border: rgba(212, 175, 55, 0.35);
 }
 
 .couple-heading-italian {
@@ -1387,7 +1387,7 @@ body {
   font-size: clamp(38px, 6vw, 68px) !important;
   font-weight: 700 !important;
   letter-spacing: 0.04em !important;
-  color: #E0E0E0 !important;
+  color: #F3E5AB !important;
   text-transform: uppercase !important;
   margin: 12px 0 16px !important;
 }
@@ -1424,7 +1424,7 @@ body {
   font-size: 20px;
   font-weight: 700;
   letter-spacing: 0.2em;
-  color: #E0E0E0;
+  color: #F3E5AB;
   background: var(--gold-metallic);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -1483,7 +1483,7 @@ body {
 .parent-line {
   font-family: 'Cormorant Garamond', serif;
   font-size: 18px;
-  color: #E0E0E0;
+  color: #F5E6BE;
 }
 
 .parent-line strong {
@@ -1549,7 +1549,7 @@ body {
   padding: 20px 24px;
   background: rgba(34, 34, 34, 0.95);
   border: 1px solid rgba(179, 179, 179, 0.2);
-  border-left: 3px solid #B3B3B3;
+  border-left: 3px solid #D4AF37;
   border-radius: 0 8px 8px 0;
   box-shadow: 0 8px 28px rgba(0, 0, 0, 0.4);
 }
@@ -1564,7 +1564,7 @@ body {
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
   font-size: clamp(17px, 2.5vw, 21px);
-  color: #B3B3B3;
+  color: #F5E6BE;
   line-height: 1.5;
   margin: 0;
 }
@@ -1572,214 +1572,16 @@ body {
 .italian-section-title {
   font-family: 'Cinzel', serif !important;
   font-size: clamp(26px, 4vw, 36px) !important;
-  color: #FFFFFF !important;
+  color: #F3E5AB !important;
   letter-spacing: 0.05em !important;
 }
 
 .highlight-copy {
   font-weight: 500;
-  color: #B3B3B3;
+  color: #F5E6BE;
 }
 
 /* ==========================================================================
-   ENSEMBLE & DRESS CODE SECTION
-   ========================================================================== */
-.ensemble-section {
-  padding: 65px 20px;
-}
-
-.sub-heading-text {
-  font-size: 13px;
-  color: var(--muted);
-  letter-spacing: 0.05em;
-  margin-top: 6px;
-}
-
-.ensemble-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-  max-width: 760px;
-  margin: 32px auto 28px;
-}
-
-.ensemble-card {
-  padding: 28px;
-  border-radius: 8px;
-  background: var(--pearl-card);
-  border: 1px solid rgba(200, 169, 98, 0.3);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
-  position: relative;
-  overflow: hidden;
-  text-align: left;
-}
-
-.groom-card {
-  background: linear-gradient(145deg, #2D323A 0%, #1E2228 100%);
-  border: 1px solid rgba(200, 169, 98, 0.5);
-  color: var(--pearl-skin);
-}
-
-.bride-card {
-  background: linear-gradient(145deg, #2D323A 0%, #1E2228 100%);
-  border: 1px solid rgba(179, 179, 179, 0.3);
-  color: #E0E0E0;
-}
-
-.ensemble-card-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 16px;
-}
-
-.ensemble-icon-box {
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.charcoal-icon {
-  background: rgba(200, 169, 98, 0.2);
-  color: var(--gold-italian);
-}
-
-.pearl-icon {
-  background: #E0E0E0;
-  color: var(--pearl-skin);
-}
-
-.ensemble-role-badge {
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  padding: 4px 10px;
-  border-radius: 20px;
-  background: rgba(200, 169, 98, 0.2);
-  color: var(--gold-italian);
-  text-transform: uppercase;
-}
-
-.bride-badge {
-  background: rgba(35, 39, 45, 0.08);
-  color: #E0E0E0;
-}
-
-.ensemble-card h3 {
-  font-family: 'Cinzel', serif;
-  font-size: 22px;
-  font-weight: 700;
-  margin: 0 0 10px;
-}
-
-.groom-card h3 {
-  color: var(--pearl-skin);
-}
-
-.bride-card h3 {
-  color: #E0E0E0;
-}
-
-.ensemble-desc {
-  font-size: 13px;
-  line-height: 1.6;
-  opacity: 0.9;
-  margin-bottom: 20px;
-}
-
-.color-swatch-container {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 12px;
-  border-radius: 6px;
-  background: rgba(0, 0, 0, 0.15);
-}
-
-.bride-card .color-swatch-container {
-  background: rgba(40, 40, 40, 0.6);
-  border: 1px solid rgba(200, 169, 98, 0.3);
-}
-
-.color-swatch-box {
-  width: 38px;
-  height: 38px;
-  border-radius: 6px;
-  position: relative;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  border: 1px solid rgba(200, 169, 98, 0.6);
-  flex-shrink: 0;
-  overflow: hidden;
-}
-
-.swatch-glimmer {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 50%;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.25), transparent);
-}
-
-.swatch-details {
-  display: flex;
-  flex-direction: column;
-}
-
-.swatch-name {
-  font-size: 12px;
-  font-weight: 600;
-}
-
-.swatch-hex {
-  font-size: 10px;
-  opacity: 0.7;
-}
-
-/* Dress Code Banner */
-.dress-code-banner {
-  max-width: 760px;
-  margin: 0 auto;
-  padding: 20px 24px;
-  background: #262626;
-  border-radius: 8px;
-  border: 1px solid var(--gold-italian);
-  box-shadow: 0 8px 24px rgba(35, 39, 45, 0.2);
-  color: var(--pearl-skin);
-  text-align: left;
-}
-
-.dress-code-inner {
-  display: flex;
-  align-items: flex-start;
-  gap: 16px;
-}
-
-.dress-code-sparkle {
-  color: var(--gold-italian);
-  flex-shrink: 0;
-  margin-top: 2px;
-}
-
-.dress-code-title {
-  font-family: 'Cinzel', serif;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  color: var(--gold-italian);
-  margin: 0 0 6px;
-}
-
-.dress-code-text {
-  font-size: 12px;
-  line-height: 1.5;
-  color: rgba(247, 243, 236, 0.9);
-  margin: 0;
-}
-
 /* ==========================================================================
    WALIMA MAIN SHOWCASE CARD & TIMELINE
    ========================================================================== */
@@ -1844,7 +1646,7 @@ body {
   font-family: 'Cinzel', serif;
   font-size: 20px;
   font-weight: 700;
-  color: #E0E0E0;
+  color: #F3E5AB;
   margin: 0 0 8px;
 }
 
@@ -1884,7 +1686,7 @@ body {
 .detail-value {
   display: block;
   font-size: 13px;
-  color: #E0E0E0;
+  color: #F5E6BE;
   font-weight: 600;
   margin-top: 1px;
 }
@@ -1903,7 +1705,7 @@ body {
 .timeline-header h3 {
   font-family: 'Cinzel', serif;
   font-size: 22px;
-  color: #E0E0E0;
+  color: #F3E5AB;
 }
 
 .timeline-grid {
@@ -1951,7 +1753,7 @@ body {
   font-family: 'Cinzel', serif;
   font-size: 13px;
   font-weight: 700;
-  color: #E0E0E0;
+  color: #F5E6BE;
   margin: 0 0 6px;
 }
 
@@ -1995,7 +1797,7 @@ body {
   font-family: 'Cinzel', serif;
   font-size: clamp(26px, 4vw, 36px);
   font-weight: 700;
-  color: #E0E0E0;
+  color: #F3E5AB;
   margin: 0 0 6px;
 }
 
@@ -2022,7 +1824,7 @@ body {
   gap: 8px;
   font-size: 12px;
   font-weight: 600;
-  color: #E0E0E0;
+  color: #F5E6BE;
 }
 
 .feature-item svg {
@@ -2063,8 +1865,8 @@ body {
 
 .secondary-venue-btn {
   background: transparent;
-  color: #E0E0E0;
-  border: 1px solid #E0E0E0;
+  color: #F3E5AB;
+  border: 1px solid #D4AF37;
 }
 
 .secondary-venue-btn:hover {
@@ -2077,16 +1879,16 @@ body {
    ========================================================================== */
 .timer-block {
   background: #222222 !important;
-  color: #E0E0E0 !important;
+  color: #F5E6BE !important;
   border-radius: 8px !important;
   padding: 16px 10px !important;
-  border: 1px solid rgba(179, 179, 179, 0.25) !important;
+  border: 1px solid rgba(212, 175, 55, 0.3) !important;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3) !important;
 }
 
-.timer-block b { color: #FFFFFF !important; }
+.timer-block b { color: #F3E5AB !important; }
 
-.timer-block span { color: #848484 !important; }
+.timer-block span { color: #D4AF37 !important; }
 
 .luxury-rsvp-charcoal {
   background: var(--pearl-card) !important;
@@ -2119,6 +1921,7 @@ body {
 .host-name {
   font-family: 'Cinzel', serif;
   font-size: 18px;
+  color: #F3E5AB;
   display: block;
   margin: 4px 0 2px;
 }
@@ -2174,15 +1977,11 @@ body {
 }
 
 .italian-eyebrow {
-  color: #B3B3B3 !important;
+  color: #D4AF37 !important;
 }
 
-/* Mobile Responsiveness for Ensemble and Walima details */
+/* Mobile Responsiveness for Walima details */
 @media (max-width: 768px) {
-  .ensemble-grid {
-    grid-template-columns: 1fr;
-  }
-  
   .walima-main-card {
     grid-template-columns: 1fr;
   }
@@ -2247,7 +2046,7 @@ body {
   font-family: 'Cormorant Garamond', serif;
   font-size: 20px;
   font-weight: 600;
-  color: #E0E0E0;
+  color: #F5E6BE;
 }
 
 .compliments-list {
@@ -2266,7 +2065,7 @@ body {
   font-family: 'Cormorant Garamond', serif;
   font-size: 20px;
   font-weight: 600;
-  color: #E0E0E0;
+  color: #F5E6BE;
 }
 
 .phone-pill {
@@ -2279,7 +2078,7 @@ body {
   border-radius: 20px;
   font-size: 12px;
   font-weight: 600;
-  color: #E0E0E0;
+  color: #F5E6BE;
   text-decoration: none;
   width: fit-content;
   transition: all 0.2s ease;
@@ -2517,7 +2316,7 @@ body {
   font-family: 'Cinzel', serif;
   font-size: 11px;
   font-weight: 700;
-  color: #FFFFFF;
+  color: #FFF6D6;
   letter-spacing: 0.1em;
 }
 
@@ -2566,13 +2365,13 @@ body {
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.2em;
-  color: #B3B3B3;
+  color: #F3E5AB;
   text-transform: uppercase;
   background: rgba(30, 30, 30, 0.94);
   padding: 8px 18px;
   border-radius: 20px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(179, 179, 179, 0.3);
+  border: 1px solid rgba(212, 175, 55, 0.4);
   z-index: 10;
   cursor: pointer;
 }
@@ -2586,7 +2385,7 @@ body {
 .olive-top-garland-wrap {
   width: 100%;
   max-width: 540px;
-  margin: 0 auto -15px;
+  margin: 0 auto 24px;
   pointer-events: none;
 }
 
@@ -2600,7 +2399,7 @@ body {
 }
 
 .olive-eyebrow {
-  color: #848484;
+  color: #D4AF37;
 }
 
 .invitation-sub-line {
@@ -2608,7 +2407,7 @@ body {
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.22em;
-  color: #848484;
+  color: #D4AF37;
   text-transform: uppercase;
   margin: 12px 0 6px;
 }
@@ -2619,7 +2418,7 @@ body {
   font-weight: 400 !important;
   text-align: center !important;
   margin: 10px auto 20px !important;
-  background: linear-gradient(135deg, #FFFFFF 0%, #E0E0E0 45%, #B3B3B3 100%) !important;
+  background: linear-gradient(135deg, #FFF6D6 0%, #F3D279 45%, #C5A059 100%) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
   line-height: 1.25 !important;
@@ -2632,9 +2431,9 @@ body {
   font-family: 'Cormorant Garamond', serif !important;
   font-style: italic !important;
   font-size: 0.55em !important;
-  color: #B3B3B3 !important;
+  color: #D4AF37 !important;
   margin: 0 10px;
-  -webkit-text-fill-color: #B3B3B3 !important;
+  -webkit-text-fill-color: #D4AF37 !important;
   display: inline-block;
   vertical-align: middle;
 }
@@ -2872,14 +2671,14 @@ body {
   font-size: clamp(10px, 2vw, 12px);
   font-weight: 700;
   letter-spacing: 0.2em;
-  color: #B3B3B3;
+  color: #F3E5AB;
   text-transform: uppercase;
   background: rgba(30, 30, 30, 0.94);
   backdrop-filter: blur(8px);
   padding: 8px 20px;
   border-radius: 30px;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(179, 179, 179, 0.4);
+  border: 1px solid rgba(212, 175, 55, 0.4);
   white-space: nowrap;
 }
 
@@ -2964,13 +2763,82 @@ body {
 .rsvp-card h2,
 .rsvp h2 {
   font-family: 'Cinzel', 'Cormorant Garamond', serif !important;
-  color: #FFFFFF !important;
+  color: #F3E5AB !important;
   text-shadow: 0 2px 14px rgba(0, 0, 0, 0.7) !important;
 }
 
 .closing-title,
 .closing h2 {
   font-family: 'Cormorant Garamond', serif !important;
-  color: #FFFFFF !important;
+  color: #F3E5AB !important;
   text-shadow: 0 2px 14px rgba(0, 0, 0, 0.7) !important;
 }
+
+/* Formal Invitation Block & Translation in Hero */
+.hero-quote-box {
+  margin: 10px auto 24px !important;
+  max-width: 520px !important;
+  text-align: center !important;
+}
+
+.formal-invitation-block {
+  text-align: center !important;
+  max-width: 720px;
+  margin: 0 auto !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hosts-zubair-line {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: clamp(18px, 3.4vw, 22px) !important;
+  color: #D4AF37 !important;
+  letter-spacing: 0.08em !important;
+  font-weight: 700 !important;
+  display: inline;
+}
+
+.walima-accent {
+  color: #F3E5AB;
+  font-weight: 600;
+}
+
+.daughter-of-line {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: clamp(18px, 3.4vw, 22px) !important;
+  color: #D4AF37 !important;
+  text-align: center !important;
+  margin: 6px auto 18px !important;
+  letter-spacing: 0.08em !important;
+  font-weight: 700 !important;
+  display: block;
+}
+
+.invite-script-names {
+  font-family: 'Alex Brush', cursive !important;
+  font-size: clamp(34px, 5.8vw, 56px) !important;
+  font-weight: 400 !important;
+  text-align: center !important;
+  margin: 12px auto 6px !important;
+  background: linear-gradient(135deg, #FFF6D6 0%, #F3D279 45%, #C5A059 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  line-height: 1.25 !important;
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+  display: block !important;
+  width: 100% !important;
+  letter-spacing: 0.02em;
+  transition: all 0.3s ease;
+}
+
+.invite-script-names.font-opt-alex-brush {
+  font-family: 'Alex Brush', cursive !important;
+  font-size: clamp(34px, 5.8vw, 56px) !important;
+  font-weight: 400 !important;
+  line-height: 1.25 !important;
+}
+
+
+

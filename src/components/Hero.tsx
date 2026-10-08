@@ -2,46 +2,32 @@
 
 import { motion } from "framer-motion";
 import { FloralDivider } from "./FloralDecorations";
+import { Quote } from "lucide-react";
 
 export default function Hero() {
   return (
     <section className="hero section-frame olive-tuscan-hero">
-      {/* Top Olive Garland Header (True Transparent PNG) */}
+      {/* Top Floral Header Arch - Option 1: Delicate Blossoms & Baby's Breath */}
       <div className="olive-top-garland-wrap">
         <img
-          src="/images/olive_header_silver.png"
-          alt="Silver Botanical Olive Garland"
+          src="/images/floral_opt_1_botanical.png"
+          alt="Golden Botanical Arch - Delicate Blossoms & Baby's Breath"
           className="olive-garland-img"
         />
       </div>
 
-      <motion.p
-        initial={{ opacity: 0, y: -8 }}
+      {/* Quranic Translation Quote Box (Placed above picture) */}
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.9, delay: 0.2 }}
-        className="eyebrow olive-eyebrow"
+        transition={{ duration: 0.9, delay: 0.4 }}
+        className="italian-quote-box hero-quote-box"
       >
-        IN THE NAME OF ALLAH, THE MOST GRACIOUS, THE MOST MERCIFUL
-      </motion.p>
-
-      <motion.p
-        initial={{ opacity: 0, y: -5 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.9, delay: 0.3 }}
-        className="invitation-sub-line"
-      >
-        YOU ARE CORDIALLY INVITED TO THE WALIMA RECEPTION OF
-      </motion.p>
-
-      {/* Flowing Gold Script Heading */}
-      <motion.h1
-        initial={{ opacity: 0, y: 12 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, delay: 0.4 }}
-        className="couple-script-heading"
-      >
-        Arham <span>and</span> Umaima
-      </motion.h1>
+        <Quote size={24} className="quote-icon-gold" />
+        <blockquote className="italian-quote-text">
+          &ldquo;And among His signs is that He created for you mates from among yourselves, that you may find tranquility in them...&rdquo;
+        </blockquote>
+      </motion.div>
 
       {/* Olive Watercolor Landscape Painting */}
       <motion.div

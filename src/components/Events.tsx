@@ -27,11 +27,6 @@ const eveningTimeline = [
 export default function Events() {
   return (
     <section className="events section-frame" id="events">
-      <div className="section-heading">
-        <p className="eyebrow">GRAND EVENING RECEPTION</p>
-        <h2>The Walima Celebration</h2>
-        <FloralDivider />
-      </div>
 
       <div className="walima-main-card">
         <div className="walima-card-image-wrap">
@@ -43,11 +38,6 @@ export default function Events() {
         </div>
 
         <div className="walima-card-body">
-          <h3>THE WALIMA DINNER RECEPTION</h3>
-          <p className="walima-subtitle-text">
-            Join us to celebrate the union of Arham &amp; Umaima.
-          </p>
-
           <div className="walima-details-list">
             <div className="detail-item">
               <CalendarDays className="detail-icon" size={20} />
@@ -80,7 +70,6 @@ export default function Events() {
       <div className="timeline-container">
         <div className="timeline-header">
           <p className="eyebrow">PROGRAM OF THE EVENING</p>
-          <h3>Sequence of Events</h3>
         </div>
 
         <div className="timeline-grid">
