@@ -1,36 +1,42 @@
-import { ExternalLink, MapPin } from "lucide-react";
+import { ExternalLink, CalendarPlus } from "lucide-react";
 import { BotanicalCorners, FloralDivider } from "./FloralDecorations";
 
 export default function Venue() {
-  const barat =
-    "https://www.google.com/maps/search/?api=1&query=Grand+Anmol+Banquet+Hall+Lahore";
-  const walima =
-    "https://www.google.com/maps/search/?api=1&query=Aroma+Marquee+Bahria+Town+Phase+8+Rawalpindi";
+  const mapUrl =
+    "https://www.google.com/maps/search/?api=1&query=Aroma+Marquee+Phase+7+Bahria+Town+Rawalpindi";
+  
+  const googleCalendarUrl =
+    "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Arham+%26+Umaima+Walima+Reception&dates=20261115T140000Z/20261115T180000Z&details=Walima+Dinner+Reception+at+Aroma+Marquee+Phase+7+Bahria+Town+Rawalpindi&location=Aroma+Marquee+Phase+7+Bahria+Town+Rawalpindi";
 
   return (
-    <section className="venue section-frame">
-      <p className="eyebrow">COME CELEBRATE WITH US</p>
+    <section className="venue section-frame" id="venue">
+      <p className="eyebrow">DESTINATION &amp; LOCATION</p>
       <h2>Find Your Way</h2>
       <FloralDivider />
-      <div className="venue-grid">
-        <div className="venue-card">
-          <BotanicalCorners />
-          <MapPin size={28} />
-          <p>BARAT VENUE</p>
-          <h3>Grand Anmol Banquet Hall</h3>
-          <span>Lahore</span>
-          <a href={barat} target="_blank" rel="noreferrer">
-            GET DIRECTIONS <ExternalLink size={14} />
+
+      <div className="venue-spotlight-card">
+        <BotanicalCorners />
+        
+        <h3 className="venue-name">Aroma Marquee</h3>
+        <p className="venue-address">Phase 7, Bahria Town, Rawalpindi</p>
+
+        <div className="venue-actions">
+          <a
+            href={mapUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="venue-btn primary-venue-btn"
+          >
+            GET MAP DIRECTIONS <ExternalLink size={16} />
           </a>
-        </div>
-        <div className="venue-card">
-          <BotanicalCorners />
-          <MapPin size={28} />
-          <p>WALIMA VENUE</p>
-          <h3>Aroma Marquee</h3>
-          <span>Bahria Town Phase 8, Rawalpindi</span>
-          <a href={walima} target="_blank" rel="noreferrer">
-            GET DIRECTIONS <ExternalLink size={14} />
+          
+          <a
+            href={googleCalendarUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="venue-btn secondary-venue-btn"
+          >
+            ADD TO CALENDAR <CalendarPlus size={16} />
           </a>
         </div>
       </div>

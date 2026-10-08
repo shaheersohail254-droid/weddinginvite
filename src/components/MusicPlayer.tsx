@@ -37,10 +37,7 @@ export default function MusicPlayer({ enabled }: { enabled: boolean }) {
   return (
     <>
       <audio ref={ref} loop preload="auto">
-        <source src="/music/leberch-invitation-wedding-375839.mp3" type="audio/mpeg" />
         <source src="/music/wedding-music.mp3" type="audio/mpeg" />
-        <source src="/musics/leberch-invitation-wedding-375839.mp3" type="audio/mpeg" />
-        <source src="/musics/wedding-music.mp3" type="audio/mpeg" />
         Your browser does not support the audio element.
       </audio>
       <button

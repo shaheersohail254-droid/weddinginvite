@@ -1,39 +1,26 @@
-import { CalendarDays, Clock3, MapPin } from "lucide-react";
+import { CalendarDays, Clock3, MapPin, Sparkles, UtensilsCrossed, Camera, Wine } from "lucide-react";
 import { FloralDivider } from "./FloralDecorations";
 
-const events = [
+const eveningTimeline = [
   {
-    title: "MEHNDI",
-    subtitle: "Night of Henna & Music",
-    date: "12 November 2026",
-    time: "7:00 PM Onwards",
-    venue: "Residence",
-    rsvp: "Zubair Akhtar",
-    tone: "mehndi",
-    image: "/images/mehndi_event.webp",
-    tag: "Traditional Henna Ceremony",
+    time: "7:00 PM (19:00 HRS)",
+    title: "Welcome of Esteemed Guests",
+    icon: Wine,
   },
   {
-    title: "BARAT",
-    subtitle: "The Grand Wedding Ceremony",
-    date: "13 November 2026",
-    time: "12:00 PM Noon",
-    venue: "Grand Anmol Banquet Hall, Lahore",
-    rsvp: "Perwaiz Akhtar",
-    tone: "barat",
-    image: "/images/barat_event.webp",
-    tag: "Wedding Ceremony & Feast",
+    time: "7:45 PM (19:45 HRS)",
+    title: "Arrival of Groom & Bride",
+    icon: Sparkles,
   },
   {
-    title: "WALIMA",
-    subtitle: "The Reception Celebration",
-    date: "15 November 2026",
-    time: "6:00 PM Evening",
-    venue: "Aroma Marquee, Bahria Town Phase 8, Rawalpindi",
-    rsvp: "Zubair Akhtar",
-    tone: "walima",
-    image: "/images/wedding_stage.jpg",
-    tag: "Grand Festive Reception",
+    time: "8:15 PM (20:15 HRS)",
+    title: "Formal Dinner",
+    icon: UtensilsCrossed,
+  },
+  {
+    time: "9:30 PM (21:30 HRS)",
+    title: "Felicitations & Photography",
+    icon: Camera,
   },
 ];
 
@@ -41,42 +28,75 @@ export default function Events() {
   return (
     <section className="events section-frame" id="events">
       <div className="section-heading">
-        <p className="eyebrow">THE CELEBRATIONS</p>
-        <h2>Our Wedding Events</h2>
+        <p className="eyebrow">GRAND EVENING RECEPTION</p>
+        <h2>The Walima Celebration</h2>
         <FloralDivider />
       </div>
-      <div className="event-grid">
-        {events.map((e) => (
-          <article className={`event-card ${e.tone}`} key={e.title}>
-            <div className="event-image">
-              <img
-                src={e.image}
-                alt={`${e.title} Celebration visual`}
-                className="event-card-img"
-              />
-            </div>
-            <div className="event-content">
-              <h3>{e.title}</h3>
-              <div className="event-detail">
-                <CalendarDays size={17} />
-                <span>{e.date}</span>
+
+      <div className="walima-main-card">
+        <div className="walima-card-image-wrap">
+          <img
+            src="/images/walima_stage.jpg"
+            alt="Aroma Marquee Walima Stage & Ballroom"
+            className="walima-card-img"
+          />
+        </div>
+
+        <div className="walima-card-body">
+          <h3>THE WALIMA DINNER RECEPTION</h3>
+          <p className="walima-subtitle-text">
+            Join us to celebrate the union of Arham &amp; Umaima.
+          </p>
+
+          <div className="walima-details-list">
+            <div className="detail-item">
+              <CalendarDays className="detail-icon" size={20} />
+              <div>
+                <span className="detail-label">DATE</span>
+                <strong className="detail-value">Sunday, 15 November 2026</strong>
               </div>
-              {e.time && (
-                <div className="event-detail">
-                  <Clock3 size={17} />
-                  <span>{e.time}</span>
+            </div>
+
+            <div className="detail-item">
+              <Clock3 className="detail-icon" size={20} />
+              <div>
+                <span className="detail-label">TIME</span>
+                <strong className="detail-value">7:00 PM Evening (19:00 HRS)</strong>
+              </div>
+            </div>
+
+            <div className="detail-item">
+              <MapPin className="detail-icon" size={20} />
+              <div>
+                <span className="detail-label">VENUE</span>
+                <strong className="detail-value">Aroma Marquee, Phase 7, Bahria Town, Rawalpindi</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Evening Timeline / Program */}
+      <div className="timeline-container">
+        <div className="timeline-header">
+          <p className="eyebrow">PROGRAM OF THE EVENING</p>
+          <h3>Sequence of Events</h3>
+        </div>
+
+        <div className="timeline-grid">
+          {eveningTimeline.map((item, index) => {
+            const Icon = item.icon;
+            return (
+              <div key={index} className="timeline-node-card">
+                <div className="node-time-badge">{item.time}</div>
+                <div className="node-icon-box">
+                  <Icon size={20} />
                 </div>
-              )}
-              <div className="event-detail">
-                <MapPin size={17} />
-                <span>{e.venue}</span>
+                <h4>{item.title}</h4>
               </div>
-              <div className="event-rsvp">
-                RSVP: <strong>{e.rsvp}</strong>
-              </div>
-            </div>
-          </article>
-        ))}
+            );
+          })}
+        </div>
       </div>
     </section>
   );

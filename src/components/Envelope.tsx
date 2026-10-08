@@ -1,105 +1,153 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 export default function Envelope({ onOpen }: { onOpen: () => void }) {
   const [isOpening, setIsOpening] = useState(false);
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+
+  // Soft spring inertia mouse interaction
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      const { innerWidth, innerHeight } = window;
+      const nx = (e.clientX / innerWidth - 0.5) * 2; // -1 to 1
+      const ny = (e.clientY / innerHeight - 0.5) * 2;
+      setMousePos({ x: nx, y: ny });
+    };
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, []);
 
   const handleOpen = () => {
     if (isOpening) return;
     setIsOpening(true);
     setTimeout(() => {
       onOpen();
-    }, 1100);
+    }, 1300);
   };
 
   return (
     <motion.section
-      className="opening-screen"
-      animate={isOpening ? { opacity: 0, scale: 1.05 } : { opacity: 1, scale: 1 }}
-      transition={{ duration: 0.7, delay: 0.5, ease: "easeInOut" }}
+      className="villa-door-opening-screen"
+      animate={isOpening ? { opacity: 0 } : { opacity: 1 }}
+      transition={{ duration: 0.8, delay: 0.7, ease: "easeInOut" }}
     >
-      <div className="ambient ambient-one" />
-      <div className="ambient ambient-two" />
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-        className="opening-content"
-      >
-        <div className="bismillah">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</div>
-        <p className="eyebrow">A WEDDING INVITATION</p>
+      <div className="door-screen-backdrop" />
+
+      {/* Realistically Proportioned Centered Villa Door Card */}
+      <div className="door-card-outer-frame">
         <div
-          className={`envelope-wrap ${isOpening ? "opening" : ""}`}
+          className={`door-card-3d-wrapper ${isOpening ? "card-opened" : ""}`}
           onClick={handleOpen}
           role="button"
           tabIndex={0}
-          aria-label="Open Wedding Invitation Envelope"
+          aria-label="Untie the golden satin bow to open the wedding invitation doors"
         >
-          <div className="envelope-shadow" />
+          {/* Left Door Panel (3D Outward Swing) */}
           <motion.div
-            whileHover={!isOpening ? { y: -6, scale: 1.015 } : {}}
-            whileTap={!isOpening ? { scale: 0.98 } : {}}
-            transition={{ duration: 0.3 }}
-            className="envelope-card proper-envelope"
+            className="door-card-panel left-card-panel"
+            animate={isOpening ? { rotateY: -110, opacity: 0.95 } : { rotateY: 0, opacity: 1 }}
+            transition={{ duration: 1.1, delay: 0.35, ease: [0.4, 0, 0.2, 1] }}
+            style={{ transformOrigin: "left center", transformStyle: "preserve-3d" }}
           >
-            {/* Triangular V-Shape Envelope Flap (Flips open in 3D) */}
+            <div className="door-card-crop left-card-crop">
+              <img
+                src="/images/full_screen_doors.jpg"
+                alt="Villa Entrance Left Door"
+                className="door-card-img left-card-img"
+              />
+            </div>
+            <div className="door-card-edge-shadow left-edge" />
+          </motion.div>
+
+          {/* Right Door Panel (3D Outward Swing) */}
+          <motion.div
+            className="door-card-panel right-card-panel"
+            animate={isOpening ? { rotateY: 110, opacity: 0.95 } : { rotateY: 0, opacity: 1 }}
+            transition={{ duration: 1.1, delay: 0.35, ease: [0.4, 0, 0.2, 1] }}
+            style={{ transformOrigin: "right center", transformStyle: "preserve-3d" }}
+          >
+            <div className="door-card-crop right-card-crop">
+              <img
+                src="/images/full_screen_doors.jpg"
+                alt="Villa Entrance Right Door"
+                className="door-card-img right-card-img"
+              />
+            </div>
+            <div className="door-card-edge-shadow right-edge" />
+          </motion.div>
+
+          {/* ELEGANT, DELICATE & REALISTIC GOLD SATIN RIBBON ASSEMBLY */}
+          <div className="satin-ribbon-assembly">
+            {/* Left Retracting Satin Ribbon Band */}
             <motion.div
-              className="envelope-top-flap"
-              animate={isOpening ? { rotateX: 180, zIndex: 1 } : { rotateX: 0, zIndex: 4 }}
-              transition={{ duration: 0.7, ease: [0.4, 0, 0.2, 1] }}
-              style={{ transformOrigin: "top center", transformStyle: "preserve-3d" }}
+              className="realistic-satin-band-half left-band-half"
+              animate={isOpening ? { scaleX: 0, opacity: 0 } : { scaleX: 1, opacity: 1 }}
+              transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
+              style={{ transformOrigin: "left center" }}
             >
-              <div className="flap-border-line" />
+              <img
+                src="/images/satin_band_3d_clean.png"
+                alt="Left Satin Ribbon Band"
+                className="satin-band-img"
+              />
             </motion.div>
 
-            {/* Envelope Side Pocket Folds */}
-            <div className="envelope-side-fold left-fold" />
-            <div className="envelope-side-fold right-fold" />
-
-            {/* Realistic 3D Wax Stamp Seal (Centered & Lifts off on opening) */}
+            {/* Right Retracting Satin Ribbon Band */}
             <motion.div
-              className="wax-stamp-seal-wrap"
-              initial={{ x: "-50%", y: "-50%" }}
+              className="realistic-satin-band-half right-band-half"
+              animate={isOpening ? { scaleX: 0, opacity: 0 } : { scaleX: 1, opacity: 1 }}
+              transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
+              style={{ transformOrigin: "right center" }}
+            >
+              <img
+                src="/images/satin_band_3d_clean.png"
+                alt="Right Satin Ribbon Band"
+                className="satin-band-img"
+              />
+            </motion.div>
+
+            {/* Delicate Smaller Gold Satin Bow with Organic Wind Flutter & Pointer Inertia */}
+            <motion.div
+              className="clean-satin-bow-wrapper"
               animate={
                 isOpening
-                  ? { x: "-50%", y: "-120%", scale: 1.15, opacity: 0 }
-                  : { x: "-50%", y: "-50%", scale: 1, opacity: 1 }
+                  ? { scale: 0.1, rotate: -25, opacity: 0 }
+                  : {
+                      rotateZ: [0, -2, 1.5, -1, 2, -1.5, 0],
+                      skewX: [0, -1.5, 1, -0.5, 1.5, -1, 0],
+                      x: mousePos.x * 6,
+                      y: mousePos.y * 4,
+                    }
               }
-              transition={{ duration: 0.4 }}
+              transition={
+                isOpening
+                  ? { duration: 0.45, ease: "backIn" }
+                  : { duration: 6.5, repeat: Infinity, ease: "easeInOut" }
+              }
+              whileHover={{ scale: 1.06 }}
             >
-              <div className="wax-stamp-seal-box">
-                <img
-                  src="/images/wax_seal.png"
-                  alt="Realistic Royal Wax Seal"
-                  className="wax-seal-real-img"
-                />
-              </div>
+              <img
+                src="/images/satin_bow_3d_clean.png"
+                alt="3D Gold Satin Ribbon Bow"
+                className="clean-satin-bow-img"
+              />
             </motion.div>
-
-            {/* Inner Card Content (Slides upward out of envelope pocket) */}
-            <motion.div
-              className="envelope-content-box"
-              animate={isOpening ? { y: -45, scale: 1.04 } : { y: 0, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              <div className="envelope-names">
-                ARHAM <span>&amp;</span> UMAIMA
-              </div>
-            </motion.div>
-          </motion.div>
+          </div>
         </div>
 
+        {/* Tap Prompt Note */}
         <motion.p
-          className="tap-note clickable-tap-note"
+          className="door-card-tap-note"
           onClick={handleOpen}
-          animate={isOpening ? { opacity: 0 } : { opacity: [0.6, 1, 0.6] }}
+          style={{ cursor: "pointer" }}
+          animate={isOpening ? { opacity: 0 } : { opacity: [0.75, 1, 0.75] }}
           transition={{ duration: 2, repeat: isOpening ? 0 : Infinity }}
         >
-          Tap to begin the celebration
+          Untie the knot to enter the celebration
         </motion.p>
-      </motion.div>
+      </div>
     </motion.section>
   );
 }

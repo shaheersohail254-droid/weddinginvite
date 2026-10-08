@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { FloralDivider } from "./FloralDecorations";
 
-const target = new Date("2026-11-13T12:00:00+05:00").getTime();
+const target = new Date("2026-11-15T19:00:00+05:00").getTime();
 
 export default function Countdown() {
   const [left, setLeft] = useState(target - Date.now());
@@ -21,23 +21,23 @@ export default function Countdown() {
 
   return (
     <section className="countdown section-frame">
-      <p className="eyebrow">COUNTING DOWN TO THE BARAT</p>
+      <p className="eyebrow">COUNTING DOWN TO THE WALIMA GALA</p>
       <h2>Until we celebrate together</h2>
       <FloralDivider />
       <div className="timer">
-        <div>
+        <div className="timer-block">
           <b>{String(days).padStart(2, "0")}</b>
           <span>DAYS</span>
         </div>
-        <div>
+        <div className="timer-block">
           <b>{String(hours).padStart(2, "0")}</b>
           <span>HOURS</span>
         </div>
-        <div>
+        <div className="timer-block">
           <b>{String(mins).padStart(2, "0")}</b>
           <span>MINUTES</span>
         </div>
-        <div>
+        <div className="timer-block">
           <b>{String(secs).padStart(2, "0")}</b>
           <span>SECONDS</span>
         </div>
