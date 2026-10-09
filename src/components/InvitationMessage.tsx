@@ -6,7 +6,7 @@ export default function InvitationMessage() {
       <div className="formal-invitation-block">
         <p className="body-copy">
           <strong className="hosts-zubair-line">Mr. &amp; Mrs. Zubair Akhtar</strong> cordially request the honour of your presence at the
-          <strong className="walima-accent">Walima Reception</strong> celebrating the marriage of
+          <strong className="walima-accent"> Walima Reception,</strong> celebrating the marriage of
         </p>
 
         {/* Alex Brush Cursive Calligraphy: 3 Dedicated Lines */}
